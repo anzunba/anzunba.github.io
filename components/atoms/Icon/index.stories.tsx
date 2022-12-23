@@ -31,7 +31,7 @@ export default {
       control: { type: 'select' },
     },
     icon: {
-      options: ['github', 'notion', 'linkedin', 'mapPin'],
+      options: ['github', 'notion', 'linkedin', 'mapPin', 'chevronRight', 'home', 'planet', 'rocket', 'stars'],
       control: { type: 'select' },
     },
   },

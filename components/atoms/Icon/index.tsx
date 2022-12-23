@@ -4,11 +4,16 @@ import {
   IconBrandNotion,
   IconBrandLinkedin,
   IconMapPin,
+  IconChevronRight,
+  IconHome,
+  IconPlanet,
+  IconRocket,
+  IconStars,
 } from '@tabler/icons';
 import React from 'react';
 
 interface IconProps extends ActionIconProps {
-  icon: 'github' | 'notion' | 'linkedin' | 'mapPin';
+  icon: 'github' | 'notion' | 'linkedin' | 'mapPin' | 'chevronRight' | "home" | "planet" | "rocket" | "stars";
 }
 
 const icons = {
@@ -16,6 +21,11 @@ const icons = {
   notion: <IconBrandNotion />,
   linkedin: <IconBrandLinkedin />,
   mapPin: <IconMapPin />,
+  chevronRight: <IconChevronRight />,
+  home: <IconHome />,
+  planet: <IconPlanet />,
+  rocket: <IconRocket />,
+  stars: <IconStars />
 };
 
 const Icon = (props: IconProps) => (

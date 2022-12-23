@@ -14,7 +14,7 @@ export const Logo = ({ height = '100%' }: LogoProps) => (
       width="100%"
       height="100%"
       viewBox="0 0 275 300"
-      enable-background="new 0 0 275 300"
+      enableBackground="new 0 0 275 300"
     >
       <image
         id="image0"
