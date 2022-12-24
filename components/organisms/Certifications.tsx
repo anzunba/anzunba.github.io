@@ -14,7 +14,7 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
       if (isVisible) {
         scrollIntoView({ alignment: 'start' });
       }
-    }, [isVisible]);
+    }, [isVisible, scrollIntoView]);
     return (
       <Template ref={targetRef}>
         <SectionTitle title="Others" />
@@ -94,7 +94,7 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
     );
   }
 );
-
+Certifications.displayName = 'Certifications';
 export default Certifications;
 
 const PROJECTS = [

@@ -18,5 +18,5 @@ const SectionTitle = forwardRef<HTMLDivElement, SectionTitleProps>(
     );
   }
 );
-
+SectionTitle.displayName = 'SectionTitle';
 export default SectionTitle;
