@@ -7,7 +7,7 @@ interface TemplateProps {
 
 const Template = forwardRef<HTMLDivElement, TemplateProps>((props, ref) => {
   return (
-    <Container mih="100vh" w="calc(100% - 128px)" ref={ref}>
+    <Container mih="100vh" w="calc(100% - 128px)" ref={ref} px={0}>
       <Stack justify="center" spacing={60} {...props} />
     </Container>
   );

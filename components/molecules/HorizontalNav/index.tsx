@@ -1,6 +1,6 @@
 import {
   MantineStyleSystemProps,
-  Header,
+  Box,
   Group,
   Burger,
   Menu,
@@ -9,14 +9,12 @@ import React, { useState } from 'react';
 import { Logo } from '../..';
 import {
   IconHome,
-  IconPlanet,
   IconRocket,
   IconStars,
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandNotion,
 } from '@tabler/icons';
-import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 
 interface HorizontalNavProps extends MantineStyleSystemProps {
@@ -25,7 +23,7 @@ interface HorizontalNavProps extends MantineStyleSystemProps {
 const HorizontalNav = ({ setSection, ...props }: HorizontalNavProps) => {
   const [opened, setUserMenuOpened] = useState(false);
   return (
-    <Header height={68} pos="fixed" bg="navy.7" w="100%" {...props}>
+    <Box h={68} pos="fixed" bg="navy.7" w="100%" {...props}>
       <Group position="apart" px="md" py="4px">
         <Logo height="60px" />
         <Menu
@@ -86,7 +84,7 @@ const HorizontalNav = ({ setSection, ...props }: HorizontalNavProps) => {
           </Menu.Dropdown>
         </Menu>
       </Group>
-    </Header>
+    </Box>
   );
 };
 
