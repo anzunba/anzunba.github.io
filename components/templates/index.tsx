@@ -12,5 +12,5 @@ const Template = forwardRef<HTMLDivElement, TemplateProps>((props, ref) => {
     </Container>
   );
 });
-
+Template.displayName = 'Template';
 export default Template;

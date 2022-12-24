@@ -17,7 +17,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(
       if (isVisible) {
         scrollIntoView({ alignment: 'start' });
       }
-    }, [isVisible]);
+    }, [isVisible, scrollIntoView]);
     return (
       <Template ref={targetRef}>
         <SectionTitle title="Projects" />
@@ -31,8 +31,8 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(
         <Stack>
           <Title size="h4">Technologies</Title>
           <Grid>
-            {TECHNOLOGIES.map((t) => (
-              <Grid.Col  md={3} xs={4}>
+            {TECHNOLOGIES.map((t, i) => (
+              <Grid.Col  md={3} xs={4} key={i}>
                 <Paper bg="navy.8" radius="sm" p={8}>
                   <Group>
                     <Paper radius="sm" maw="max-content" bg="navy.6">
@@ -66,7 +66,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(
     );
   }
 );
-
+Projects.displayName = 'Projects';
 export default Projects;
 
 const PROJECTS = [

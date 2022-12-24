@@ -14,19 +14,19 @@ const Main = forwardRef<HTMLDivElement, MainProps>(({ isVisible }, _) => {
         scrollIntoView({ alignment: 'start' });
       }
     }
-  }, [isVisible]);
+  }, [isVisible, scrollIntoView]);
   return (
     <Stack h="100vh" justify="center" ref={targetRef}>
       <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
         <Stack>
-          <Title size="h3">Hello, I'm Anna.</Title>
-          <Title size="h3">I'm a full-stack web developer.</Title>
+          <Title size="h3">Hello, I&apos;m Anna.</Title>
+          <Title size="h3">I&apos;m a full-stack web developer.</Title>
         </Stack>
       </MediaQuery>
       <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
         <Stack>
-          <Title>Hello, I'm Anna.</Title>
-          <Title>I'm a full-stack web developer.</Title>
+          <Title>Hello, I&apos;m Anna.</Title>
+          <Title>I&apos;m a full-stack web developer.</Title>
         </Stack>
       </MediaQuery>
       <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
@@ -44,5 +44,5 @@ const Main = forwardRef<HTMLDivElement, MainProps>(({ isVisible }, _) => {
     </Stack>
   );
 });
-
+Main.displayName = 'Main';
 export default Main;
