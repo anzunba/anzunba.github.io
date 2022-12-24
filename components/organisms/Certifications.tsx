@@ -1,14 +1,15 @@
-import { Grid, Stack } from '@mantine/core';
+import { Box, Grid, Stack } from '@mantine/core';
 import { useScrollIntoView } from '@mantine/hooks';
 import React, { forwardRef, useEffect } from 'react';
 import { FeatureCard, SectionTitle, Title } from '..';
 import Template from '../templates';
+import Image from 'next/image';
 interface CertificationsProps {
   isVisible?: boolean;
 }
 const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
   ({ isVisible }, _) => {
-    const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>();
+    const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({offset: 80});
     useEffect(() => {
       if (isVisible) {
         scrollIntoView({ alignment: 'start' });
@@ -20,9 +21,13 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
         <Stack>
           <Title size="h3">Certifications</Title>
           <Grid>
-            {PROJECTS.map((project: string, i: number) => (
-              <Grid.Col span={4} key={i}>
-                <FeatureCard title={project} description="" />
+            {PROJECTS.map((p, i: number) => (
+              <Grid.Col xl={4} lg={6} sm={12} key={i}>
+                <FeatureCard
+                  title={p.title}
+                  description={p.description}
+                  image={p.image}
+                />
               </Grid.Col>
             ))}
           </Grid>
@@ -30,13 +35,13 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
         <Stack>
           <Title size="h3">Languages</Title>
           <Grid>
-            <Grid.Col span={4}>
+            <Grid.Col lg={4} md={6} sm={12}>
               <FeatureCard title="日本語" description="ネイティブ" />
             </Grid.Col>
-            <Grid.Col span={4}>
+            <Grid.Col lg={4} md={6} sm={12}>
               <FeatureCard title="英語" description="ビジネスレベル" />
             </Grid.Col>
-            <Grid.Col span={4}>
+            <Grid.Col lg={4} md={6} sm={12}>
               <FeatureCard title="フランス語" description="日常会話レベル" />
             </Grid.Col>
           </Grid>
@@ -44,11 +49,44 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
         <Stack>
           <Title size="h3">Conferences</Title>
           <Grid>
-            <Grid.Col span={6}>
-              <FeatureCard title="Nutanix" description="" />
+            <Grid.Col lg={4} md={6} sm={12}>
+              <FeatureCard title="AWS Summit Tokyo 2019" description="" vertical>
+                <Box ta="center" p={8}>
+                  <iframe
+                    width="100%"
+                    height="198"
+                    src="https://www.youtube.com/embed/rE3J9hBI8eI"
+                    title="YouTube video player"
+                    frameBorder={0}
+                  ></iframe>
+                </Box>
+              </FeatureCard>
             </Grid.Col>
-            <Grid.Col span={6}>
-              <FeatureCard title="Cisco Live!" description="" />
+            <Grid.Col lg={4} md={6} sm={12}>
+              <FeatureCard title="Nutanix .NEXT 2019 Copenhagen" description="" vertical>
+                <Box ta="center" p={8}>
+                  <iframe
+                    width="100%"
+                    height="198"
+                    src="https://www.youtube.com/embed/H3dZq7cavmY"
+                    title="YouTube video player"
+                    frameBorder={0}
+                  ></iframe>
+                </Box>
+              </FeatureCard>
+            </Grid.Col>
+            <Grid.Col lg={4} md={6} sm={12}>
+              <FeatureCard title="Cisco Live!" description="" vertical>
+                <Box ta="center" p={8}>
+                  <iframe
+                    width="100%"
+                    height="198"
+                    src="https://www.youtube.com/embed/ywslfS-9L-c"
+                    title="YouTube video player"
+                    frameBorder={0}
+                  ></iframe>
+                </Box>
+              </FeatureCard>
             </Grid.Col>
           </Grid>
         </Stack>
@@ -60,7 +98,19 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
 export default Certifications;
 
 const PROJECTS = [
-  'AWS Solution Architect Professional',
-  'Certified Scrum Master',
-  'CCNA',
+  {
+    title: 'AWS Solution Architect Professional',
+    description: 'Issued By Amazon Web Services (AWS)',
+    image: '/aws-certified-solutions-architect-professional.png',
+  },
+  {
+    title: 'Certified Scrum Master (CSM)',
+    description: 'Issued By Scrum Alliance',
+    image: '/csm.png',
+  },
+  {
+    title: 'CCNA',
+    description: 'Issued By Cisco',
+    image: '/ccna.png',
+  },
 ];

@@ -1,4 +1,4 @@
-import { Flex, Stack } from '@mantine/core';
+import { Box, Flex, MediaQuery, Stack } from '@mantine/core';
 import { useScrollIntoView } from '@mantine/hooks';
 import React, { forwardRef, useEffect } from 'react';
 import { Icon, Text, Title } from '..';
@@ -17,12 +17,30 @@ const Main = forwardRef<HTMLDivElement, MainProps>(({ isVisible }, _) => {
   }, [isVisible]);
   return (
     <Stack h="100vh" justify="center" ref={targetRef}>
-      <Title>Hello, I'm Anna.</Title>
-      <Title>I'm a full-stack web developer.</Title>
-      <Flex gap="xs" align="center">
-        <Icon icon="mapPin" />
-        <Text size="lg">Hawaii / Osaka</Text>
-      </Flex>
+      <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+        <Stack>
+          <Title size="h3">Hello, I'm Anna.</Title>
+          <Title size="h3">I'm a full-stack web developer.</Title>
+        </Stack>
+      </MediaQuery>
+      <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+        <Stack>
+          <Title>Hello, I'm Anna.</Title>
+          <Title>I'm a full-stack web developer.</Title>
+        </Stack>
+      </MediaQuery>
+      <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+        <Flex gap="xs" align="center">
+          <Icon icon="mapPin" />
+          <Text size="md">Hawaii / Osaka</Text>
+        </Flex>
+      </MediaQuery>
+      <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+        <Flex gap="xs" align="center">
+          <Icon icon="mapPin" />
+          <Text size="lg">Hawaii / Osaka</Text>
+        </Flex>
+      </MediaQuery>
     </Stack>
   );
 });

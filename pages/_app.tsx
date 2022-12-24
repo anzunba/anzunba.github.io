@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
           ],
         },
         primaryColor: 'navy',
-        primaryShade: { light: 6, dark: 8 }
+        primaryShade: { light: 2, dark: 8 }
       }}
     >
       <Component {...pageProps} />

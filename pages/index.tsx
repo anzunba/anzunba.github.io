@@ -1,7 +1,13 @@
 import Head from 'next/head';
-import { Nav, Main, WhatIDo, Projects, Certifications } from '../components';
-import { Box, Flex, Stack } from '@mantine/core';
-import React, { useCallback, useState } from 'react';
+import {
+  VerticalNav,
+  HorizontalNav,
+  Main,
+  Projects,
+  Certifications,
+} from '../components';
+import { Container, MediaQuery, Stack } from '@mantine/core';
+import React, { useState } from 'react';
 
 const Index = () => {
   const [section, setSection] = useState<number>(0);
@@ -13,27 +19,30 @@ const Index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.ico" />
       </Head>
-      <Flex direction="row" bg="navy.9">
-        <Box bg="primary">
-          <Nav
-            h="100vh"
-            w="100px"
-            pos="fixed"
-            setSection={setSection}
-          />
-          <Stack
-            align="center"
-            justify="center"
-            ml="100px"
-            w="calc(100vw - 150px)"
-          >
+      <Container fluid bg="primary" px={0}>
+        <MediaQuery smallerThan="md" styles={{ display: 'none' }}>
+          <VerticalNav setSection={setSection} />
+        </MediaQuery>
+        <MediaQuery largerThan="md" styles={{ display: 'none' }}>
+          <HorizontalNav setSection={setSection} />
+        </MediaQuery>
+
+        <MediaQuery
+          largerThan="md"
+          styles={{
+            '&.mantine-Stack-root': {
+              marginLeft: '100px',
+              width: 'calc(100vw - 150px)',
+            },
+          }}
+        >
+          <Stack align="center" justify="center" spacing={128}>
             <Main isVisible={section === 0} />
-            <WhatIDo isVisible={section === 1} />
             <Projects isVisible={section === 2} />
             <Certifications isVisible={section === 3} />
           </Stack>
-        </Box>
-      </Flex>
+        </MediaQuery>
+      </Container>
     </>
   );
 };
