@@ -4,6 +4,7 @@ import {
   Group,
   Burger,
   Menu,
+  Flex,
 } from '@mantine/core';
 import React, { useState } from 'react';
 import { Logo } from '../..';
@@ -24,10 +25,10 @@ const HorizontalNav = ({ setSection, ...props }: HorizontalNavProps) => {
   const [opened, setUserMenuOpened] = useState(false);
   return (
     <Header height={68} pos="fixed" bg="navy.7" w="100%" {...props}>
-      <Group position="apart" px="md" py="4px">
+      <Flex justify='space-between' align='center' px="md" py="4px">
         <Logo />
         <Menu
-          // width={260}
+          width={260}
           position="bottom-end"
           transition="pop-top-right"
           onClose={() => setUserMenuOpened(false)}
@@ -82,7 +83,7 @@ const HorizontalNav = ({ setSection, ...props }: HorizontalNavProps) => {
             </Menu.Item> */}
           </Menu.Dropdown>
         </Menu>
-      </Group>
+      </Flex>
     </Header>
   );
 };
