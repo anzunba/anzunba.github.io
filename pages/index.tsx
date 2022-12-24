@@ -5,6 +5,7 @@ import {
   Main,
   Projects,
   Certifications,
+  Footer
 } from '../components';
 import { Container, MediaQuery, Stack } from '@mantine/core';
 import React, { useState } from 'react';
@@ -42,6 +43,7 @@ const Index = () => {
             <Certifications isVisible={section === 3} />
           </Stack>
         </MediaQuery>
+        <Footer />
       </Container>
     </>
   );
