@@ -34,7 +34,7 @@ const VerticalNav = ({ setSection, ...props }: NavProps) => {
       align="center"
       {...props}
     >
-      <Logo height="80px" />
+      <Logo />
       <Stack spacing="xl" align="center">
         <Tooltip label="Home" position="right">
           <ActionIcon variant="light" onClick={() => setSection(0)}>

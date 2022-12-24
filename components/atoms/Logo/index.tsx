@@ -1,10 +1,7 @@
 import { Box } from '@mantine/core';
 
-interface LogoProps {
-  height?: string | number;
-}
-export const Logo = ({ height = '100%' }: LogoProps) => (
-  <Box sx={{ height: height, padding: "8px" }}>
+export const Logo = () => (
+  <Box p={8} h={60}>
     <svg
       version="1.1"
       id="Layer_1"
