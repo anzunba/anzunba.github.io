@@ -1,7 +1,6 @@
 import {
   MantineStyleSystemProps,
   Header,
-  Group,
   Burger,
   Menu,
   Flex,
@@ -14,7 +13,6 @@ import {
   IconStars,
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandNotion,
 } from '@tabler/icons';
 import Link from 'next/link';
 

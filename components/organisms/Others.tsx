@@ -3,11 +3,11 @@ import { useScrollIntoView } from '@mantine/hooks';
 import React, { forwardRef, useEffect } from 'react';
 import { FeatureCard, SectionTitle, Title } from '..';
 import Template from '../templates';
-import Image from 'next/image';
-interface CertificationsProps {
+
+interface OthersProps {
   isVisible?: boolean;
 }
-const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
+const Others = forwardRef<HTMLDivElement, OthersProps>(
   ({ isVisible }, _) => {
     const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({offset: 80});
     useEffect(() => {
@@ -19,7 +19,7 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
       <Template ref={targetRef}>
         <SectionTitle title="Others" />
         <Stack>
-          <Title size="h3">Certifications</Title>
+          <Title size="h3">Others</Title>
           <Grid>
             {PROJECTS.map((p, i: number) => (
               <Grid.Col xl={4} lg={6} sm={12} key={i}>
@@ -94,8 +94,8 @@ const Certifications = forwardRef<HTMLDivElement, CertificationsProps>(
     );
   }
 );
-Certifications.displayName = 'Certifications';
-export default Certifications;
+Others.displayName = 'Others';
+export default Others;
 
 const PROJECTS = [
   {

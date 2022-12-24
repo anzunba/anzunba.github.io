@@ -7,12 +7,9 @@ import {
 } from '@mantine/core';
 import React from 'react';
 import { Logo } from '../..';
-import Icon from '../../atoms/Icon';
 import {
   IconBrandLinkedin,
-  IconBrandNotion,
   IconHome,
-  IconPlanet,
   IconRocket,
   IconStars,
   IconBrandGithub,
@@ -67,11 +64,6 @@ const VerticalNav = ({ setSection, ...props }: NavProps) => {
             </ActionIcon>
           </Link>
         </Tooltip>
-        {/* <Tooltip label="Notion" position="right">
-          <ActionIcon variant="light">
-            <IconBrandNotion />
-          </ActionIcon>
-        </Tooltip> */}
         <Box bg="gray.0" w="1px" h="100px" opacity={0.25} />
       </Stack>
     </Stack>

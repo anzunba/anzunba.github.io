@@ -1,4 +1,4 @@
-import { Box, Flex, MediaQuery, Stack } from '@mantine/core';
+import { Flex, MediaQuery, Stack } from '@mantine/core';
 import { useScrollIntoView } from '@mantine/hooks';
 import React, { forwardRef, useEffect } from 'react';
 import { Icon, Text, Title } from '..';

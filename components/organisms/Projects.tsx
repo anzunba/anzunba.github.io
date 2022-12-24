@@ -1,4 +1,4 @@
-import { Box, Grid, Group, Paper, Stack } from '@mantine/core';
+import {  Grid, Group, Paper, Stack } from '@mantine/core';
 import { useScrollIntoView } from '@mantine/hooks';
 import React, { forwardRef, useEffect } from 'react';
 import { SectionTitle, FeatureCard, Title, Text, Icon } from '..';
